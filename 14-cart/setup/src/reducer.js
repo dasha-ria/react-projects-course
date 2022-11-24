@@ -52,6 +52,12 @@ const reducer = (state, action) => {
 
     return { ...state, total, amount };
   }
+  if (action.type === "LOADING") {
+    return { ...state, loading: true };
+  }
+  if (action.type === "DISPLAY_ITEMS") {
+    return { ...state, cart: action.payload, loading: false };
+  }
   return state;
 };
 //state is what happens before the update, action is what you want it to do
